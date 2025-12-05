@@ -264,6 +264,7 @@ std::vector<Migration> version3Migrations = {
     { MigrationAction::Rename, "gOcarinaGameStartingNotes", "gEnhancements.OcarinaGameStartingNotes" },
     { MigrationAction::Rename, "gOcarinaUnlimitedFailTime", "gEnhancements.OcarinaUnlimitedFailTime" },
     { MigrationAction::Rename, "gPauseWarp", "gEnhancements.PauseWarp" },
+    { MigrationAction::Rename, "gAdvancedWarpSongs", "gEnhancements.AdvancedWarpSongs" },
     { MigrationAction::Rename, "gPermanentHeartLoss", "gEnhancements.PermanentHeartLoss" },
     { MigrationAction::Rename, "gQuickBongoKill", "gEnhancements.QuickBongoKill" },
     { MigrationAction::Rename, "gQuickPutaway", "gEnhancements.QuickPutaway" },

@@ -24,6 +24,7 @@ std::string SKULLTULAS_DESTROYED();
 std::string CURRENT_TIME();
 std::string UNSKIPPABLE();
 std::string TWO_WAY_CHOICE();
+std::string THREE_WAY_CHOICE();
 std::string NEWLINE();
 std::string COLOR(std::string x);
 std::string CENTER_TEXT();

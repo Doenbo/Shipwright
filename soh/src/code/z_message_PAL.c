@@ -3768,7 +3768,7 @@ void Message_DrawMain(PlayState* play, Gfx** p) {
                             Message_StartTextbox(play, 0x88C, NULL); // "You can't warp here!"
                             play->msgCtx.ocarinaMode = OCARINA_MODE_04;
                         } else if ((gSaveContext.eventInf[0] & 0xF) != 1) {
-                            Message_StartTextbox(play, msgCtx->lastPlayedSong + 0x88D,
+                                Message_StartTextbox(play, msgCtx->lastPlayedSong + 0x88D,
                                                  NULL); // "Warp to [place name]?"
                             play->msgCtx.ocarinaMode = OCARINA_MODE_01;
                         } else {

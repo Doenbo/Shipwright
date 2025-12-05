@@ -59,6 +59,9 @@ std::string UNSKIPPABLE() {
 std::string TWO_WAY_CHOICE() {
     return "\x1B"s;
 }
+std::string THREE_WAY_CHOICE() {
+    return "\x1C"s;
+}
 std::string NEWLINE() {
     return "\x7F\x1C"s;
 }

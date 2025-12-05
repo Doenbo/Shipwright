@@ -720,6 +720,7 @@ void SohMenu::AddMenuEnhancements() {
             " - Darunia\n"
             " - Gold Skulltulas\n"));
 
+    // Items
     path.sidebarName = "Items";
     AddSidebarEntry("Enhancements", path.sidebarName, 3);
     path.column = SECTION_COLUMN_1;
@@ -787,6 +788,16 @@ void SohMenu::AddMenuEnhancements() {
                               " - Obtained the Master Sword (depends on selection)\n"
                               " - Not within range of a Time Block\n"
                               " - Not within range of Ocarina Playing spots"));
+    AddWidget(path, "Advanced Warp Songs", WIDGET_CVAR_CHECKBOX)
+        .CVar(CVAR_ENHANCEMENT("AdvancedWarpSongs"))
+        .Options(CheckboxOptions()
+                     .Tooltip("Adds a second location to each warp song:\n"
+                              " - Minuet of Forest -> Kokiri Forest\n"
+                              " - Bolero of Fire -> Goron City\n"
+                              " - Serenade of Water -> Zoras River\n"
+                              " - Nocturne of Shadow -> Lon Lon Ranch\n"
+                              " - Requiem of Spirit -> Gerudo Valley\n"
+                              " - Prelude of Light -> Hyrule Field\n"));
 
     AddWidget(path, "Masks", WIDGET_SEPARATOR_TEXT);
     AddWidget(path, "Bunny Hood Effect", WIDGET_CVAR_COMBOBOX)

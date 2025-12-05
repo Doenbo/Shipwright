@@ -65,6 +65,7 @@ const std::string Randomizer::triforcePieceMessageTableID = "RandomizerTriforceP
 const std::string Randomizer::NaviRandoMessageTableID = "RandomizerNavi";
 const std::string Randomizer::IceTrapRandoMessageTableID = "RandomizerIceTrap";
 const std::string Randomizer::randoMiscHintsTableID = "RandomizerMiscHints";
+const std::string Randomizer::WarpSongMessageTableID = "RandomizerWarpSongs";
 
 static const char* englishRupeeNames[188] = {
     "[P]",
@@ -596,6 +597,24 @@ void Randomizer::LoadHintMessages() {
         CustomMessage("Warp to&#a mysterious place?#&" + CustomMessages::TWO_WAY_CHOICE() + "#OK&No#",
                       "Das Ziel ist&#ein mysteriöser Ort#!&" + CustomMessages::TWO_WAY_CHOICE() + "#Ja!&Nein!#",
                       "Se téléporter vers&#un endroit mystérieux#?&" + CustomMessages::TWO_WAY_CHOICE() + "#OK!&Non#",
+                      { QM_RED, QM_GREEN }));
+
+    // Advanced Warp Songs
+    CustomMessageManager::Instance->ClearMessageTable(Randomizer::WarpSongMessageTableID);
+    CustomMessageManager::Instance->AddCustomMessageTable(Randomizer::WarpSongMessageTableID);
+    CustomMessageManager::Instance->CreateMessage(
+        Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_MINUET_OF_FOREST,
+        CustomMessage("Warp to #the happy forest?#&" + CustomMessages::THREE_WAY_CHOICE() + "#Hell yeah!&Lets go!&Nope!#",
+                      { QM_RED, QM_GREEN }));
+
+    CustomMessageManager::Instance->CreateMessage(
+        Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_BOLERO_OF_FIRE,
+        CustomMessage("Warp to #the hotty crater?#&" + CustomMessages::TWO_WAY_CHOICE() + "#Hell yeah!&Nope!#",
+                      { QM_RED, QM_GREEN }));
+
+    CustomMessageManager::Instance->CreateMessage(
+        Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_SERENADE_OF_WATER,
+        CustomMessage("Warp to #the wetty lake?#&" + CustomMessages::TWO_WAY_CHOICE() + "#Hell yeah!&Nope!#",
                       { QM_RED, QM_GREEN }));
 
     // Lake Hylia water level system
