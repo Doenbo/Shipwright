@@ -2609,12 +2609,11 @@ extern "C" int CustomMessage_RetrieveIfExists(PlayState* play) {
                    ctx->GetOption(RSK_SHUFFLE_WARP_SONGS)) {
             messageEntry = CustomMessageManager::Instance->RetrieveMessage(Randomizer::hintMessageTableID,
                                                                            TEXT_WARP_MINUET_OF_FOREST, MF_FORMATTED);
-        } else if (CVarGetInteger(CVAR_RANDOMIZER_ENHANCEMENT("AdvancedWarpSongs"), 1)) {
+        } else if (CVarGetInteger(CVAR_ENHANCEMENT("AdvancedWarpSongs"), 1)) {
             switch (textId) {
                 case TEXT_WARP_MINUET_OF_FOREST:
                     messageEntry = CustomMessageManager::Instance->RetrieveMessage(
                         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_MINUET_OF_FOREST, MF_FORMATTED);
-                    gPlayState->nextEntranceIndex = Entrance_OverrideNextIndex(ENTR_LINKS_HOUSE_0_1);
                     break;
                 case TEXT_WARP_BOLERO_OF_FIRE:
                     messageEntry = CustomMessageManager::Instance->RetrieveMessage(
@@ -2624,7 +2623,7 @@ extern "C" int CustomMessage_RetrieveIfExists(PlayState* play) {
                     messageEntry = CustomMessageManager::Instance->RetrieveMessage(
                         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_SERENADE_OF_WATER, MF_FORMATTED);
                     break;
-                /*case TEXT_WARP_REQUIEM_OF_SPIRIT:
+                case TEXT_WARP_REQUIEM_OF_SPIRIT:
                     messageEntry = CustomMessageManager::Instance->RetrieveMessage(
                         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_REQUIEM_OF_SPIRIT, MF_FORMATTED);
                     break;
@@ -2635,7 +2634,7 @@ extern "C" int CustomMessage_RetrieveIfExists(PlayState* play) {
                 case TEXT_WARP_PRELUDE_OF_LIGHT:
                     messageEntry = CustomMessageManager::Instance->RetrieveMessage(
                         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_PRELUDE_OF_LIGHT, MF_FORMATTED);
-                    break;*/
+                    break;
             }
         } else if (textId == TEXT_LAKE_HYLIA_WATER_SWITCH_NAVI || textId == TEXT_LAKE_HYLIA_WATER_SWITCH_SIGN) {
             messageEntry =

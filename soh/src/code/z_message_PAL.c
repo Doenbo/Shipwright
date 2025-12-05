@@ -3768,7 +3768,7 @@ void Message_DrawMain(PlayState* play, Gfx** p) {
                             Message_StartTextbox(play, 0x88C, NULL); // "You can't warp here!"
                             play->msgCtx.ocarinaMode = OCARINA_MODE_04;
                         } else if ((gSaveContext.eventInf[0] & 0xF) != 1) {
-                                Message_StartTextbox(play, msgCtx->lastPlayedSong + 0x88D,
+                            Message_StartTextbox(play, msgCtx->lastPlayedSong + 0x88D,
                                                  NULL); // "Warp to [place name]?"
                             play->msgCtx.ocarinaMode = OCARINA_MODE_01;
                         } else {
@@ -4628,6 +4628,29 @@ void Message_Update(PlayState* play) {
                         Message_CloseTextbox(play);
                         osSyncPrintf("OCARINA_MODE=%d\n", play->msgCtx.ocarinaMode);
                     }
+                // for Advanced Warp Songs
+                } else if (msgCtx->textboxEndType == TEXTBOX_ENDTYPE_3_CHOICE && play->msgCtx.ocarinaMode == OCARINA_MODE_01) {
+                        if (Message_ShouldAdvance(play)) {
+                            osSyncPrintf("OCARINA_MODE=%d -> ", play->msgCtx.ocarinaMode);
+                            switch (msgCtx->choiceIndex) {
+                                case 0:
+                                    play->msgCtx.advancedChoice = false;
+                                    play->msgCtx.ocarinaMode = OCARINA_MODE_02;
+                                    break;
+                                case 1:
+                                    play->msgCtx.advancedChoice = true;
+                                    play->msgCtx.ocarinaMode = OCARINA_MODE_02;
+                                    break;
+                                case 2:
+                                    play->msgCtx.ocarinaMode = OCARINA_MODE_04;
+                                    break;
+                            }
+                            osSyncPrintf("InRaceSeq=%d(%d) OCARINA_MODE=%d  -->  ", gSaveContext.eventInf[0] & 0xF, 1,
+                                         play->msgCtx.ocarinaMode);
+                            Message_CloseTextbox(play);
+                            osSyncPrintf("OCARINA_MODE=%d\n", play->msgCtx.ocarinaMode);
+                        }
+
                 } else if (Message_ShouldAdvanceSilent(play)) {
                     osSyncPrintf("select=%d\n", msgCtx->textboxEndType);
                     if (msgCtx->textboxEndType == TEXTBOX_ENDTYPE_HAS_NEXT) {
