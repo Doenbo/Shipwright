@@ -604,32 +604,32 @@ void Randomizer::LoadHintMessages() {
     CustomMessageManager::Instance->AddCustomMessageTable(Randomizer::WarpSongMessageTableID);
     CustomMessageManager::Instance->CreateMessage(
         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_MINUET_OF_FOREST,
-        CustomMessage("Warp to #the Lost Woods?#&" + CustomMessages::THREE_WAY_CHOICE() + "#Warp Pad&Link's House&No#",
+        CustomMessage("Where do you like to warp?&" + CustomMessages::THREE_WAY_CHOICE() + "#Lost Woods&Kokiri Forest&Cancel#",
                       { QM_RED, QM_GREEN }));
 
     CustomMessageManager::Instance->CreateMessage(
         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_BOLERO_OF_FIRE,
-        CustomMessage("Warp to #the Death Mountain Crater?#&" + CustomMessages::THREE_WAY_CHOICE() + "#Warp Pad&Goron City&No#",
+        CustomMessage("Where do you like to warp?&" + CustomMessages::THREE_WAY_CHOICE() + "#Death Mountain Crater&Goron City&Cancel#",
                       { QM_RED, QM_GREEN }));
 
     CustomMessageManager::Instance->CreateMessage(
         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_SERENADE_OF_WATER,
-        CustomMessage("Warp to #Lake Hylia?#&" + CustomMessages::THREE_WAY_CHOICE() + "#Warp Pad&Zora's River&No#",
+        CustomMessage("Where do you like to warp?&" + CustomMessages::THREE_WAY_CHOICE() + "#Lake Hylia&Zora's River&Cancel#",
                       { QM_RED, QM_GREEN }));
 
     CustomMessageManager::Instance->CreateMessage(
         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_REQUIEM_OF_SPIRIT,
-        CustomMessage("Warp to #the Desert Colossus?#&" + CustomMessages::THREE_WAY_CHOICE() + "#Warp Pad&Gerudo Valley&No#",
+        CustomMessage("Where do you like to warp?&" + CustomMessages::THREE_WAY_CHOICE() + "#Desert Colossus&Gerudo Valley&Cancel#",
                       { QM_RED, QM_GREEN }));
 
     CustomMessageManager::Instance->CreateMessage(
         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_NOCTURNE_OF_SHADOW,
-        CustomMessage("Warp to #the graveyard?#&" + CustomMessages::THREE_WAY_CHOICE() + "#Warp Pad&Lon Lon Ranch&No#",
+        CustomMessage("Where do you like to warp?&" + CustomMessages::THREE_WAY_CHOICE() + "#The Graveyard&Kakariko&Cancel#",
                       { QM_RED, QM_GREEN }));
 
     CustomMessageManager::Instance->CreateMessage(
         Randomizer::WarpSongMessageTableID, TEXT_ADV_WARP_PRELUDE_OF_LIGHT,
-        CustomMessage("Warp to #the Temple of Time?#&" + CustomMessages::THREE_WAY_CHOICE() + "#Warp Pad&Hyrule Field&No#",
+        CustomMessage("Where do you like to warp?&" + CustomMessages::THREE_WAY_CHOICE() + "#The Temple of Time&Hyrule Field North&Cancel#",
                       { QM_RED, QM_GREEN }));
 
     // Lake Hylia water level system

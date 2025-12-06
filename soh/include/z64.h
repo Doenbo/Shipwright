@@ -705,8 +705,8 @@ typedef struct {
     /* 0xE408 */ Actor* talkActor;
     /* 0xE40C */ s16    disableWarpSongs; // warp song flag set by scene commands
     /* 0xE40E */ s16    unk_E40E; // ocarina related
-    /* 0xE410 */ u8     lastOcaNoteIdx;
-                 bool   advancedChoice;
+    /* 0xE410 */ bool advancedChoice; // for advanced warp songs
+    /* 0xE411 */ u8     lastOcaNoteIdx;
 } MessageContext; // size = 0xE418
 
 typedef enum {

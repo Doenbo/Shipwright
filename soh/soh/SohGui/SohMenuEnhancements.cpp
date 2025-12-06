@@ -795,9 +795,9 @@ void SohMenu::AddMenuEnhancements() {
                               " - Minuet of Forest -> Kokiri Forest\n"
                               " - Bolero of Fire -> Goron City\n"
                               " - Serenade of Water -> Zoras River\n"
-                              " - Nocturne of Shadow -> Lon Lon Ranch\n"
+                              " - Nocturne of Shadow -> Kakariko\n"
                               " - Requiem of Spirit -> Gerudo Valley\n"
-                              " - Prelude of Light -> Hyrule Field\n"));
+                              " - Prelude of Light -> Hyrule Field North\n"));
 
     AddWidget(path, "Masks", WIDGET_SEPARATOR_TEXT);
     AddWidget(path, "Bunny Hood Effect", WIDGET_CVAR_COMBOBOX)

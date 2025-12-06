@@ -14377,12 +14377,15 @@ static s16 sWarpSongEntrances[] = {
     ENTR_DESERT_COLOSSUS_WARP_PAD,
     ENTR_GRAVEYARD_WARP_PAD,
     ENTR_TEMPLE_OF_TIME_WARP_PAD,
-    ENTR_LINKS_HOUSE_CHILD_SPAWN,
-    ENTR_GORON_CITY_0_1,
-    ENTR_ZORAS_RIVER_0_1,
-    ENTR_GERUDO_VALLEY_0_1,
-    ENTR_LON_LON_RANCH_0_1,
-    ENTR_HYRULE_FIELD_0_1,
+};
+
+static s16 sAdvWarpSongEntrances[] = {
+    ENTR_KOKIRI_FOREST_OUTSIDE_LINKS_HOUSE,
+    ENTR_GORON_CITY_UPPER_EXIT,
+    ENTR_ZORAS_RIVER_WEST_EXIT,
+    ENTR_GERUDO_VALLEY_EAST_EXIT,
+    ENTR_KAKARIKO_VILLAGE_OUTSIDE_WINDMILL,
+    ENTR_HYRULE_FIELD_PAST_BRIDGE_SPAWN,
 };
 
 void Player_Action_8084E3C4(Player* this, PlayState* play) {
@@ -14418,11 +14421,10 @@ void Player_Action_8084E3C4(Player* this, PlayState* play) {
             ~(PLAYER_STATE2_NEAR_OCARINA_ACTOR | PLAYER_STATE2_ATTEMPT_PLAY_FOR_ACTOR | PLAYER_STATE2_PLAY_FOR_ACTOR);
         this->unk_6A8 = NULL;
     } else if (play->msgCtx.ocarinaMode == OCARINA_MODE_02) {
-        if (play->msgCtx.advancedChoice) {
-            gSaveContext.respawn[RESPAWN_MODE_RETURN].entranceIndex = sWarpSongEntrances[play->msgCtx.lastPlayedSong+6];
-        } else {
-            gSaveContext.respawn[RESPAWN_MODE_RETURN].entranceIndex = sWarpSongEntrances[play->msgCtx.lastPlayedSong];
-        }
+
+        gSaveContext.respawn[RESPAWN_MODE_RETURN].entranceIndex = play->msgCtx.advancedChoice ? 
+            sAdvWarpSongEntrances[play->msgCtx.lastPlayedSong] : 
+            sWarpSongEntrances[play->msgCtx.lastPlayedSong];        
         gSaveContext.respawn[RESPAWN_MODE_RETURN].playerParams = 0x5FF;
         gSaveContext.respawn[RESPAWN_MODE_RETURN].data = play->msgCtx.lastPlayedSong;
         
